@@ -13,18 +13,38 @@ body {
 
 .main-container {
   display: flex;
-  padding: 40px;
+  flex-direction: column;
+  padding: 10px;
   min-height: 100vh;
+}
+
+@media screen and (min-width: 768px) {
+  .main-container {
+    flex-direction: row;
+    padding: 40px;
+  }
 }
 
 .result-container {
   padding: 20px;
-  width: 50%;
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
+  width: 100%;
+  border-radius: 10px;
   background-color: #ffc533;
   display: flex;
   flex-direction: column;
+  order: 1;
+  margin-top: 10px;
+}
+
+@media screen and (min-width: 768px) {
+  .result-container {
+    order: 0;
+    width: 50%;
+    border-radius: 0;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    margin-top: 0;
+  }
 }
 
 .result-heading {
@@ -66,10 +86,20 @@ body {
   flex-direction: column;
   align-items: center;
   background-color: #0f172a;
-  width: 50%;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
+  width: 100%;
   padding: 20px;
+  order: 0;
+  border-radius: 10px;
+}
+
+@media screen and (min-width: 768px) {
+  .character-container {
+    order: 1;
+    width: 50%;
+    border-radius: 0;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
 }
 
 .character-heading {
@@ -79,8 +109,17 @@ body {
   text-align: center;
 }
 
-.input-container {
+.form-container {
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media screen and (min-width: 900px) {
+  .form-container {
+    flex-direction: row;
+  }
 }
 
 .input {
@@ -91,11 +130,26 @@ body {
   border-radius: 4px;
   border: none;
   outline: none;
+  margin-bottom: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .input {
+    width: 300px;
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .input {
+    width: 300px;
+    margin-right: 10px;
+    margin-bottom: 0px;
+  }
 }
 
 .add-button {
   padding: 10px 30px;
-  margin-left: 20px;
   border-radius: 5px;
   font-family: 'Roboto';
   font-size: 14px;
